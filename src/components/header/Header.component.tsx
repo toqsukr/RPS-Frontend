@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { BsCollection } from 'react-icons/bs'
-import { AiOutlineReload } from 'react-icons/ai'
+import { FiDownload } from 'react-icons/fi'
 
 import css from './Header.module.scss'
 
@@ -10,7 +10,7 @@ export const Header: FC<{ title: string }> = ({ title }) => {
       <div id={css.home_header_container}>
         <BsCollection />
         <p>{title}</p>
-        <AiOutlineReload />
+        <FiDownload />
       </div>
     </header>
   )
