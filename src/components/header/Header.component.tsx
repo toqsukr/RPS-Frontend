@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { BsCollection } from 'react-icons/bs'
-import { FiDownload } from 'react-icons/fi'
 
 import css from './Header.module.scss'
+import DownloadIcon from '@components/ui/icons/DownloadIcon.component'
 
 export const Header: FC<{ title: string }> = ({ title }) => {
   return (
@@ -10,7 +10,7 @@ export const Header: FC<{ title: string }> = ({ title }) => {
       <div id={css.home_header_container}>
         <BsCollection />
         <p>{title}</p>
-        <FiDownload />
+        <DownloadIcon />
       </div>
     </header>
   )

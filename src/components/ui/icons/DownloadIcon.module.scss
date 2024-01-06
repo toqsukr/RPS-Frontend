@@ -1,0 +1,27 @@
+.download_icon_animated {
+  pointer-events: none;
+  line,
+  polyline {
+    transition: transform 0.3s ease-in-out;
+    animation: arrowAnimation 1s forwards;
+  }
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(50px); /* Полет вниз */
+    opacity: 0; /* Исчезновение */
+  }
+  70% {
+    transform: translateY(-50px); /* Полет вверх */
+    opacity: 0; /* Исчезновение */
+  }
+  100% {
+    transform: translateY(0); /* Возвращение на место */
+    opacity: 1; /* Появление */
+  }
+}
