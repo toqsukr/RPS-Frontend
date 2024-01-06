@@ -1,10 +1,10 @@
 #home_header_container {
+  width: 100%;
+  max-width: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background-color: var(--background-color-light);
-  box-shadow: 1px 5px 12px 4px rgba(0, 0, 0, 0.2);
   svg {
     min-width: 30px;
     min-height: 30px;

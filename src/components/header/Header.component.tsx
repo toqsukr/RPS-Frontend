@@ -6,10 +6,12 @@ import css from './Header.module.scss'
 
 export const Header: FC = () => {
   return (
-    <div id={css.home_header_container}>
-      <BsCollection />
-      <p>Lorem ipsum</p>
-      <AiOutlineReload />
-    </div>
+    <header>
+      <div id={css.home_header_container}>
+        <BsCollection />
+        <p>Lorem ipsum</p>
+        <AiOutlineReload />
+      </div>
+    </header>
   )
 }
