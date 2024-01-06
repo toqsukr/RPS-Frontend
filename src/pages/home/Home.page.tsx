@@ -1,5 +1,8 @@
-import './App.css'
+import { FC } from 'react'
+import css from './Home.module.scss'
 
-export const Home = () => {
+const Home: FC = () => {
   return <></>
 }
+
+export default Home
