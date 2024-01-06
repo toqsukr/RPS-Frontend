@@ -4,12 +4,12 @@ import { AiOutlineReload } from 'react-icons/ai'
 
 import css from './Header.module.scss'
 
-export const Header: FC = () => {
+export const Header: FC<{ title: string }> = ({ title }) => {
   return (
     <header>
       <div id={css.home_header_container}>
         <BsCollection />
-        <p>Lorem ipsum</p>
+        <p>{title}</p>
         <AiOutlineReload />
       </div>
     </header>
