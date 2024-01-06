@@ -10,6 +10,17 @@
   border-radius: 24px;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: opacity 0.3s;
+}
+
+.swipe_right {
+  transition: transform 0.3s ease-in-out;
+  animation: swipeAnimationRight 0.4s forwards;
+}
+
+.swipe_left {
+  transition: transform 0.3s ease-in-out;
+  animation: swipeAnimationLeft 0.4s forwards;
 }
 
 @media screen and (orientation: landscape) {
@@ -17,5 +28,27 @@
     width: 75vh;
     height: 75vh;
     margin: 20px 30px 0 30px;
+  }
+}
+
+@keyframes swipeAnimationRight {
+  0% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50px) translateY(15px);
+    opacity: 0;
+  }
+}
+
+@keyframes swipeAnimationLeft {
+  0% {
+    transform: translateX(0px) translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px) translateY(15px);
+    opacity: 0;
   }
 }
