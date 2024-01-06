@@ -11,3 +11,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media screen and (orientation: landscape) {
+  #home_image_box_container {
+    width: 75vh;
+    height: 75vh;
+    margin: 20px 30px 0 30px;
+  }
+}
