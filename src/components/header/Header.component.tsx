@@ -8,7 +8,7 @@ export const Header: FC = () => {
   return (
     <div id={css.home_header_container}>
       <BsCollection />
-      <p>Title</p>
+      <p>Lorem ipsum</p>
       <AiOutlineReload />
     </div>
   )
