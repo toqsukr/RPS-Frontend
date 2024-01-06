@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 15px 20px;
   background-color: var(--background-color-light);
 
   svg {
@@ -10,5 +9,6 @@
     min-height: 30px;
     width: 2.25rem;
     height: 2.25rem;
+    margin: 15px auto;
   }
 }
