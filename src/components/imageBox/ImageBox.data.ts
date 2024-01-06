@@ -9,7 +9,7 @@ export const images: IImage[] = [
   },
   {
     id: '1',
-    author: 'Айвазоваский',
+    author: 'Айвазовский',
     src: 'https://media.discordapp.net/attachments/977133644441325578/1185566397368127579/0QFV174c8EA.jpg?ex=65a288bf&is=659013bf&hm=f39d6d288c2291cebddba67ff6b19d9ba87db8e8985517e553606d93c7052738&=&format=webp&width=676&height=676',
     title: 'Три сестры',
   },
@@ -23,7 +23,7 @@ export const images: IImage[] = [
     id: '3',
     author: 'Шишкин',
     src: 'https://media.discordapp.net/attachments/977133644441325578/1184860408381706271/g9U_a23t5gI.jpg?ex=65a931bf&is=6596bcbf&hm=6f791857b7d5f6f845495675f7128c460087797bc05498f064d5f9908dc6fb19&=&format=webp&width=516&height=676',
-    title: 'Медуза гаргона',
+    title: 'Медуза горгона',
   },
   {
     id: '4',

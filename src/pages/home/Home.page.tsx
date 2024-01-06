@@ -14,7 +14,7 @@ const Home: FC = () => {
       <section id={css.home_main_section}>
         <Header title={currentImage.title} />
         <section onClick={() => setImageID((imageID + 1) % 5)} id={css.home_inner_container}>
-          <ImageBox />
+          <ImageBox {...images[imageID]} />
         </section>
       </section>
     </>
