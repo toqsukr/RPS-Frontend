@@ -58,11 +58,9 @@
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  opacity: 0;
   user-select: none;
   pointer-events: none;
-  color: black;
-  background-color: rgb(238, 216, 128);
+  background-color: rgb(62, 62, 62);
   svg {
     align-self: flex-start;
     justify-self: flex-end;
@@ -70,6 +68,7 @@
   p {
     user-select: none;
     padding: 20px;
+    flex: 1 1 0;
   }
 }
 
