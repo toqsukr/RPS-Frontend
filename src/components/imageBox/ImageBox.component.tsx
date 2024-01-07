@@ -56,8 +56,8 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
           [css.hide_image]: showInfo != null && !showInfo,
         })}
         id={css.home_image_info_container}>
-        <p>{images[currentImageID].description ?? 'No description D:'}</p>
         <IoClose onClick={() => setShowInfo(false)} />
+        <p>{images[currentImageID].description ?? 'No description D:'}</p>
       </div>
     </div>
   )
