@@ -11,8 +11,8 @@
 
   svg {
     margin: 5px;
-    min-width: 45px;
-    min-height: 45px;
+    min-width: 40px;
+    min-height: 40px;
     width: 1.5rem;
     height: 1.5rem;
     opacity: 0.6;
@@ -35,21 +35,18 @@
   border-radius: inherit;
   user-select: all;
   pointer-events: all;
-  svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 5px;
-    min-width: 45px;
-    min-height: 45px;
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0.6;
-    transition: opacity 0.3s;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
+}
+
+#info_icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#heart_icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
 
 #home_image_info_container {
@@ -64,7 +61,7 @@
   overflow-y: auto;
   svg {
     float: right;
-    margin: 20px 20px 0 20px;
+    margin-left: 20px;
   }
   p {
     user-select: none;

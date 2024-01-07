@@ -6,6 +6,7 @@ import { IoClose } from 'react-icons/io5'
 import classNames from 'classnames'
 import { IImageBox } from './ImageBox.interface'
 import AuthorBar from './authorBar/AuthorBar.component'
+import HeartIcon from '@components/ui/icons/heart/HeartIcon.component'
 
 const ImageBox: FC<IImageBox> = ({ ...props }) => {
   const { currentImageID, images, setCurrentImageID } = props
@@ -47,7 +48,8 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
         })}
         {...handlers}
         id={css.home_image_box_container}>
-        <HiOutlineInformationCircle onClick={() => setShowInfo(true)} />
+        <HiOutlineInformationCircle id={css.info_icon} onClick={() => setShowInfo(true)} />
+        <HeartIcon id={css.heart_icon} />
         <AuthorBar {...images[currentImageID].author} />
       </div>
       <div
