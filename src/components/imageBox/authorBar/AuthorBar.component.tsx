@@ -6,7 +6,7 @@ const AuthorBar: FC<IAuthor> = ({ ...props }) => {
   const { photoURL, name, surname } = props
   return (
     <div id={css.home_author_container}>
-      <img src={photoURL ?? '/images/profile.png'} alt="" />
+      <img src={photoURL ?? '/images/profile.png'} alt="" draggable="false" />
       <span>{`${name} ${surname}`}</span>
     </div>
   )
