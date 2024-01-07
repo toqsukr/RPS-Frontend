@@ -58,8 +58,10 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
         onTouchMove={e =>
           startPosition && setCurrentPosition({ x: e.touches[0].clientX, y: e.touches[0].clientY })
         }
-        onMouseDown={e => setStartPosition({ x: e.clientX, y: e.clientY })}
-        onTouchStart={e => setStartPosition({ x: e.touches[0].clientX, y: e.touches[0].clientY })}>
+        onMouseDown={e => showInfo || setStartPosition({ x: e.clientX, y: e.clientY })}
+        onTouchStart={e =>
+          showInfo || setStartPosition({ x: e.touches[0].clientX, y: e.touches[0].clientY })
+        }>
         <div
           className={classNames({
             [css.swipe_right]: swipeDirection == 'Right',
