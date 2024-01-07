@@ -1,9 +1,15 @@
-import { IconType } from 'react-icons'
+import classNames from 'classnames'
+import { FC, useState } from 'react'
+import css from './HeartIcon.module.scss'
+import { IHeart } from './HeartIcon.interface'
 
-const HeartIcon: IconType = ({ ...props }) => {
+const HeartIcon: FC<IHeart> = ({ ...props }) => {
+  const [liked, setLiked] = useState<boolean>(props.liked)
   return (
     <svg
-      {...props}
+      className={classNames({ [css.heart_icon_liked]: liked })}
+      onClick={() => setLiked(!liked)}
+      id={props.id}
       stroke="currentColor"
       fill="currentColor"
       strokeWidth="0"

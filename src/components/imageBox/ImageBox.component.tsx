@@ -49,7 +49,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
         {...handlers}
         id={css.home_image_box_container}>
         <HiOutlineInformationCircle id={css.info_icon} onClick={() => setShowInfo(true)} />
-        <HeartIcon id={css.heart_icon} />
+        <HeartIcon liked={false} id={css.heart_icon} />
         <AuthorBar {...images[currentImageID].author} />
       </div>
       <div
