@@ -73,6 +73,12 @@
   }
 }
 
+@media (max-width: 450px) {
+  #home_image_info_container {
+    font-size: 1rem;
+  }
+}
+
 .hide_image {
   transition: transform 1s ease-in-out;
   animation: rotateHideAnimation 0.5s forwards;
