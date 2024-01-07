@@ -12,12 +12,12 @@
     transform: translateY(0);
     opacity: 1;
   }
-  30% {
-    transform: translateY(50px); /* Полет вниз */
+  33% {
+    transform: translateY(20px); /* Полет вниз */
     opacity: 0; /* Исчезновение */
   }
-  70% {
-    transform: translateY(-50px); /* Полет вверх */
+  66% {
+    transform: translateY(-20px); /* Полет вверх */
     opacity: 0; /* Исчезновение */
   }
   100% {
