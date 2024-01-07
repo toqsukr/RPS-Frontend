@@ -13,7 +13,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
   const { currentImageID, images, setCurrentImageID } = props
   const [swipeDirection, setSwipeDirection] = useState<'Right' | 'Left' | null>(null)
   const [showInfo, setShowInfo] = useState<boolean | null>(null)
-  const { currentPosition, startPosition, setCurrentPosition, setStartPosition } = useMouse()
+  const { startPosition, setCurrentPosition, setStartPosition } = useMouse()
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setSwipeDirection('Left')
