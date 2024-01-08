@@ -90,6 +90,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
           <p>{images[currentImageID].description ?? 'No description D:'}</p>
         </div>
       </div>
+      <div id={css.groove}></div>
     </>
   )
 }

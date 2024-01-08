@@ -1,3 +1,21 @@
-.heart_icon_liked {
-  fill: rgba(255, 40, 40, 0.75);
+.heart_icon_empty {
+  fill: rgba(255, 40, 40, 0.75); /* Цвет обводки */
+}
+
+@keyframes fillAnimation {
+  0% {
+    stroke-dashoffset: 0; /* Длина линии (2 * длина линии) */
+  }
+  100% {
+    stroke-dashoffset: 500; /* Скрыть линию */
+  }
+}
+
+@keyframes unfillAnimation {
+  0% {
+    stroke-dashoffset: 500; /* Скрыть линию */
+  }
+  100% {
+    stroke-dashoffset: 0; /* Длина линии (2 * длина линии) */
+  }
 }

@@ -7,7 +7,7 @@ const HeartIcon: FC<IActiveIcon> = ({ ...props }) => {
   const [liked, setLiked] = useState<boolean>(props.active)
   return (
     <svg
-      className={classNames({ [css.heart_icon_liked]: liked })}
+      className={classNames({ [css.heart_icon_empty]: !liked, [css.heart_icon_filled]: liked })}
       onClick={() => setLiked(!liked)}
       id={props.id}
       stroke="currentColor"
