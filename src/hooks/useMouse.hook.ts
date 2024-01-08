@@ -29,9 +29,12 @@ export const useMouse = (elementID: string) => {
 
       const translateY = (1 / 250000) * Math.pow(relativeX, 3)
 
+      const rotate = relativeX > 0 ? (4 / 30) * relativeX : -(4 / 30) * relativeX
+
       transferingElement?.style.setProperty(
         'transform',
-        `translate(${translateX}px, ${translateY}px`
+        `translate(${translateX}px, ${translateY}px)
+          rotateZ(${rotate}deg)`
       )
     }
 
