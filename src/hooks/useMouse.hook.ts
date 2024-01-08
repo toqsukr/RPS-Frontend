@@ -9,24 +9,34 @@ export const useMouse = (elementID: string) => {
   const [startPosition, setStartPosition] = useState<IPosition>()
   const [currentPosition, setCurrentPosition] = useState<IPosition>()
   useEffect(() => {
-    currentPosition?.x &&
+    const transferingElement = document.getElementById(elementID)
+    if (
+      transferingElement &&
+      currentPosition?.x &&
       startPosition?.x &&
       currentPosition?.y &&
-      startPosition?.y &&
-      document
-        .getElementById(elementID)
-        ?.style.setProperty(
-          'transform',
-          `translate(${currentPosition.x - startPosition.x}px, ${
-            currentPosition.y - startPosition.y
-          }px`
-        )
+      startPosition?.y
+    ) {
+      const maxOffset = 300
+      const relativeX =
+        Math.abs(2 * (currentPosition.x - startPosition.x)) > maxOffset
+          ? 2 * (currentPosition.x - startPosition.x) < 0
+            ? -maxOffset
+            : maxOffset
+          : 2 * (currentPosition.x - startPosition.x)
+
+      const translateX = relativeX
+
+      const translateY = (1 / 250000) * Math.pow(relativeX, 3)
+
+      transferingElement?.style.setProperty(
+        'transform',
+        `translate(${translateX}px, ${translateY}px`
+      )
+    }
 
     if (!currentPosition) {
-      setTimeout(
-        () => document.getElementById(elementID)?.style.setProperty('transform', `translate(0, 0)`),
-        300
-      )
+      setTimeout(() => transferingElement?.style.setProperty('transform', `translate(0, 0)`), 300)
       return
     }
   }, [currentPosition])
