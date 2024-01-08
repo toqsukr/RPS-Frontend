@@ -8,12 +8,13 @@ import { IImageBox } from './ImageBox.interface'
 import AuthorBar from './authorBar/AuthorBar.component'
 import HeartIcon from '@components/ui/icons/heart/HeartIcon.component'
 import { useMouse } from '@hooks/useMouse.hook'
+import StarIcon from '@components/ui/icons/star/StarIcon.component'
 
 const ImageBox: FC<IImageBox> = ({ ...props }) => {
   const { currentImageID, images, setCurrentImageID } = props
   const [swipeDirection, setSwipeDirection] = useState<'Right' | 'Left' | null>(null)
   const [showInfo, setShowInfo] = useState<boolean | null>(null)
-  const { startPosition, setCurrentPosition, setStartPosition } = useMouse()
+  const { startPosition, setCurrentPosition, setStartPosition } = useMouse(css.home_card_container)
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setSwipeDirection('Left')
@@ -72,7 +73,8 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
           {...handlers}
           id={css.home_image_box_container}>
           <HiOutlineInformationCircle id={css.info_icon} onClick={() => setShowInfo(true)} />
-          <HeartIcon liked={false} id={css.heart_icon} />
+          <HeartIcon active={false} id={css.heart_icon} />
+          <StarIcon active={false} />
           <AuthorBar {...images[currentImageID].author} />
         </div>
         <div

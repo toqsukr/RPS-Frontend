@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 import { FC, useState } from 'react'
 import css from './HeartIcon.module.scss'
-import { IHeart } from './HeartIcon.interface'
+import { IActiveIcon } from '../Icon.interface'
 
-const HeartIcon: FC<IHeart> = ({ ...props }) => {
-  const [liked, setLiked] = useState<boolean>(props.liked)
+const HeartIcon: FC<IActiveIcon> = ({ ...props }) => {
+  const [liked, setLiked] = useState<boolean>(props.active)
   return (
     <svg
       className={classNames({ [css.heart_icon_liked]: liked })}

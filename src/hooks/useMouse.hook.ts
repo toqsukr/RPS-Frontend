@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-import css from '@components/imageBox/ImageBox.module.scss'
 
 interface IPosition {
   x: number
   y: number
 }
 
-export const useMouse = () => {
+export const useMouse = (elementID: string) => {
   const [startPosition, setStartPosition] = useState<IPosition>()
   const [currentPosition, setCurrentPosition] = useState<IPosition>()
   useEffect(() => {
@@ -15,7 +14,7 @@ export const useMouse = () => {
       currentPosition?.y &&
       startPosition?.y &&
       document
-        .getElementById(css.home_card_container)
+        .getElementById(elementID)
         ?.style.setProperty(
           'transform',
           `translate(${currentPosition.x - startPosition.x}px, ${
@@ -25,10 +24,7 @@ export const useMouse = () => {
 
     if (!currentPosition) {
       setTimeout(
-        () =>
-          document
-            .getElementById(css.home_card_container)
-            ?.style.setProperty('transform', `translate(0, 0)`),
+        () => document.getElementById(elementID)?.style.setProperty('transform', `translate(0, 0)`),
         300
       )
       return
