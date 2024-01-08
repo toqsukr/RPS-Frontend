@@ -1,4 +1,4 @@
-import { SetStateAction } from 'react'
+import { RefObject, SetStateAction } from 'react'
 import { IAuthor } from './authorBar/AuthorBar.interface'
 
 export interface IImage {

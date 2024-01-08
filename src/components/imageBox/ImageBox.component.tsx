@@ -7,14 +7,16 @@ import classNames from 'classnames'
 import { IImageBox } from './ImageBox.interface'
 import AuthorBar from './authorBar/AuthorBar.component'
 import HeartIcon from '@components/ui/icons/heart/HeartIcon.component'
-import { useMouse } from '@hooks/useMouse.hook'
+import { useSwipeAnimation } from '@hooks/useSwipeAnimation.hook'
 import StarIcon from '@components/ui/icons/star/StarIcon.component'
 
 const ImageBox: FC<IImageBox> = ({ ...props }) => {
   const { currentImageID, images, setCurrentImageID } = props
   const [swipeDirection, setSwipeDirection] = useState<'Right' | 'Left' | null>(null)
   const [showInfo, setShowInfo] = useState<boolean | null>(null)
-  const { startPosition, setCurrentPosition, setStartPosition } = useMouse(css.home_card_container)
+  const { startPosition, setCurrentPosition, setStartPosition } = useSwipeAnimation(
+    css.home_card_container
+  )
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setSwipeDirection('Left')
@@ -38,7 +40,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
         )
       }, 400)
     },
-    delta: 100,
+    delta: 80,
     preventScrollOnSwipe: true,
     trackMouse: true,
   })
