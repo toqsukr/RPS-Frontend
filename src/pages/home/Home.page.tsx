@@ -4,9 +4,12 @@ import { Header } from '@components/header/Header.component'
 import ImageBox from '@components/imageBox/ImageBox.component'
 import { images } from '@components/imageBox/ImageBox.data'
 import { useImage } from '@hooks/useImage.hook'
+import { useTelegram } from '@hooks/useTelegram.hook'
 
 const Home: FC = () => {
   const { imageID, setImageID } = useImage()
+
+  useTelegram()
 
   const currentImage = images[imageID]
   return (
