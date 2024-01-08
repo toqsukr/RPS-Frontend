@@ -5,10 +5,10 @@ import { IAuthor } from './AuthorBar.interface'
 import css from './AuthorBar.module.scss'
 
 const AuthorBar: FC<IAuthor> = ({ ...props }) => {
-  const { photoURL, name, surname } = props
+  const { name, surname } = props
   return (
     <div id={css.home_author_container}>
-      {photoURL ? <img src={photoURL} alt="" draggable="false" /> : <HiUser />}
+      <HiUser />
       <span>{`${name} ${surname}`}</span>
     </div>
   )

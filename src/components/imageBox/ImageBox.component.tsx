@@ -1,14 +1,14 @@
 import { FC, useState } from 'react'
-import css from './ImageBox.module.scss'
 import { useSwipeable } from 'react-swipeable'
 import { HiOutlineInformationCircle } from 'react-icons/hi'
 import { IoClose } from 'react-icons/io5'
 import classNames from 'classnames'
+import HeartIcon from '@components/ui/icons/heart/HeartIcon.component'
+import StarIcon from '@components/ui/icons/star/StarIcon.component'
+import { useSwipeAnimation } from '@hooks/useSwipeAnimation.hook'
+import css from './ImageBox.module.scss'
 import { IImageBox } from './ImageBox.interface'
 import AuthorBar from './authorBar/AuthorBar.component'
-import HeartIcon from '@components/ui/icons/heart/HeartIcon.component'
-import { useSwipeAnimation } from '@hooks/useSwipeAnimation.hook'
-import StarIcon from '@components/ui/icons/star/StarIcon.component'
 
 const ImageBox: FC<IImageBox> = ({ ...props }) => {
   const { currentImageID, images, setCurrentImageID } = props
