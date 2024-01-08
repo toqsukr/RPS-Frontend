@@ -71,7 +71,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
             [css.swipe_left]: swipeDirection == 'Left',
             [css.hide_image]: showInfo != null && showInfo,
             [css.show_image]: showInfo != null && !showInfo,
-            [css.image_appearance]: !swipeDirection,
+            [css.image_appearance]: showInfo == null && !swipeDirection,
           })}
           {...handlers}
           id={css.home_image_box_container}>
