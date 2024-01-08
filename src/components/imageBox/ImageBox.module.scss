@@ -126,16 +126,16 @@
 }
 
 .next_image_appearance {
-  animation: nextAppearanceAnimation 0.4s ease-in-out;
+  animation: nextAppearanceAnimation 0.3s ease-in-out;
 }
 
 .prev_image_appearance {
-  animation: prevAppearanceAnimation 0.4s ease-in-out;
+  animation: prevAppearanceAnimation 0.3s ease-in-out;
 }
 
 @keyframes nextAppearanceAnimation {
   0% {
-    transform: translate(-300px, -100px) rotateZ(30deg);
+    transform: translate(-300px, -150px) rotateZ(-30deg);
     opacity: 0;
   }
   100% {
@@ -146,7 +146,7 @@
 
 @keyframes prevAppearanceAnimation {
   0% {
-    transform: translate(300px, 100px) rotateZ(30deg);
+    transform: translate(300px, 150px) rotateZ(-30deg);
     opacity: 0;
   }
   100% {
