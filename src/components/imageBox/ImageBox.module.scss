@@ -111,10 +111,6 @@
   animation: swipeAnimationLeft 0.2s forwards;
 }
 
-.image_appearance {
-  animation: appearanceAnimation 0.4s ease-in-out;
-}
-
 @media screen and (orientation: landscape) {
   #home_card_container {
     width: 75vh;
@@ -129,11 +125,32 @@
   }
 }
 
-@keyframes appearanceAnimation {
+.next_image_appearance {
+  animation: nextAppearanceAnimation 0.4s ease-in-out;
+}
+
+.prev_image_appearance {
+  animation: prevAppearanceAnimation 0.4s ease-in-out;
+}
+
+@keyframes nextAppearanceAnimation {
   0% {
+    transform: translate(-300px, -100px) rotateZ(30deg);
     opacity: 0;
   }
   100% {
+    transform: translate(0, 0) rotateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes prevAppearanceAnimation {
+  0% {
+    transform: translate(300px, 100px) rotateZ(30deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotateZ(0);
     opacity: 1;
   }
 }

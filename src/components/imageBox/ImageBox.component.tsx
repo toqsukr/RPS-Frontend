@@ -14,12 +14,14 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
   const { currentImageID, images, setCurrentImageID } = props
   const [swipeDirection, setSwipeDirection] = useState<'Right' | 'Left' | null>(null)
   const [showInfo, setShowInfo] = useState<boolean | null>(null)
+  const [prevSwipe, setPrevSwipe] = useState<'Right' | 'Left' | null>(null)
   const { startPosition, setCurrentPosition, setStartPosition } = useSwipeAnimation(
     css.home_card_container
   )
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setSwipeDirection('Left')
+      setPrevSwipe('Left')
       setShowInfo(null)
       handleMouseUp()
       setTimeout(() => {
@@ -31,6 +33,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
     },
     onSwipedRight: () => {
       setSwipeDirection('Right')
+      setPrevSwipe('Right')
       setShowInfo(null)
       handleMouseUp()
       setTimeout(() => {
@@ -71,11 +74,16 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
             [css.swipe_left]: swipeDirection == 'Left',
             [css.hide_image]: showInfo != null && showInfo,
             [css.show_image]: showInfo != null && !showInfo,
-            [css.image_appearance]: showInfo == null && !swipeDirection,
+            [css.next_image_appearance]:
+              showInfo == null && !swipeDirection && prevSwipe == 'Right',
+            [css.prev_image_appearance]: showInfo == null && !swipeDirection && prevSwipe == 'Left',
           })}
           {...handlers}
           id={css.home_image_box_container}>
-          <HiOutlineInformationCircle id={css.info_icon} onClick={() => setShowInfo(true)} />
+          <HiOutlineInformationCircle
+            id={css.info_icon}
+            onClick={() => startPosition || setShowInfo(true)}
+          />
           <HeartIcon active={false} id={css.heart_icon} />
           <StarIcon active={false} />
           <AuthorBar {...images[currentImageID].author} />
