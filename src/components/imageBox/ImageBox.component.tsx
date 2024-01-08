@@ -40,7 +40,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
         )
       }, 200)
     },
-    delta: 80,
+    delta: 0,
     preventScrollOnSwipe: true,
     trackMouse: true,
   })
