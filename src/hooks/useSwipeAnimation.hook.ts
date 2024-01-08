@@ -44,7 +44,9 @@ export const useSwipeAnimation = (elementID: string) => {
     }
 
     if (!currentPosition) {
-      setTimeout(() => transferingElement?.style.setProperty('transform', `translate(0, 0)`), 200)
+      setTimeout(() => {
+        transferingElement?.style.setProperty('transform', 'translate(0, 0)')
+      }, 200)
       return
     }
   }, [currentPosition])

@@ -27,7 +27,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
         setCurrentImageID((prevImage: number) =>
           prevImage === images.length - 1 ? 0 : prevImage + 1
         )
-      }, 400)
+      }, 200)
     },
     onSwipedRight: () => {
       setSwipeDirection('Right')
@@ -38,7 +38,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
         setCurrentImageID((prevImage: number) =>
           prevImage === 0 ? images.length - 1 : prevImage - 1
         )
-      }, 400)
+      }, 200)
     },
     delta: 80,
     preventScrollOnSwipe: true,
@@ -71,6 +71,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
             [css.swipe_left]: swipeDirection == 'Left',
             [css.hide_image]: showInfo != null && showInfo,
             [css.show_image]: showInfo != null && !showInfo,
+            [css.image_appearance]: !swipeDirection,
           })}
           {...handlers}
           id={css.home_image_box_container}>

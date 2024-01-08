@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   border-radius: 24px;
+  transition: opacity 0.3s;
 
   svg {
     margin: 5px;
@@ -96,11 +97,24 @@
   animation: swipeAnimationLeft 0.2s forwards;
 }
 
+.image_appearance {
+  animation: appearanceAnimation 0.4s ease-in-out;
+}
+
 @media screen and (orientation: landscape) {
   #home_card_container {
     width: 75vh;
     height: 75vh;
     margin: 20px 30px 0 30px;
+  }
+}
+
+@keyframes appearanceAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
