@@ -4,3 +4,5 @@ export const enum Routes {
 }
 
 export const HOST_URL = 'http://localhost:8080/api'
+
+export const TELEGRAM_API_URL = `https://api.telegram.org/bot${import.meta.env.REACT_APP_BOT_TOKEN}`
