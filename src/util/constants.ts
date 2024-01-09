@@ -3,4 +3,4 @@ export const enum Routes {
   PAGE_404_ROUTE = '/404',
 }
 
-export const VITE_REACT_APP_HOST_URL = 'https://rps-telegram-o55l.onrender.com/api'
+export const VITE_REACT_APP_HOST_URL = 'https://rps-telegram.onrender.com/api'
