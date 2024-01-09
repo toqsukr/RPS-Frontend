@@ -18,6 +18,7 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
   const { startPosition, setCurrentPosition, setStartPosition } = useSwipeAnimation(
     css.home_card_container
   )
+
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setSwipeDirection('Left')

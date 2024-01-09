@@ -8,8 +8,5 @@ export const useTelegram = () => {
     initDataUnsafe &&
       'user' in initDataUnsafe &&
       Cookies.set('user', JSON.stringify(initDataUnsafe.user))
-    const savedData = Cookies.get('user')
-    console.log(initDataUnsafe)
-    console.log(savedData)
   }, [])
 }

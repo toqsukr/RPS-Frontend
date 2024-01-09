@@ -3,4 +3,4 @@ export const enum Routes {
   PAGE_404_ROUTE = '/404',
 }
 
-export const HOST_URL = 'http://localhost:3000/api'
+export const HOST_URL = 'http://localhost:8080/api'
