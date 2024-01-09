@@ -17,13 +17,14 @@ export class UserService {
       const response = await axios.post<IImageRequest, AxiosResponse<string>>(
         `${TELEGRAM_API_URL}/sendPhoto`,
         {
-          chat_id: 592417111,
+          chat_id: user.username,
           photo: image.src,
           caption: imageText,
         },
         {
           headers: {
             'Content-Type': 'application/json',
+            'User-Agent': 'Java',
           },
         }
       )
