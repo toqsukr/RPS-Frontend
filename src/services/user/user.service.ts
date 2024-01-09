@@ -9,7 +9,7 @@ export class UserService {
   static sendImage = async (image: IImage) => {
     const userString = Cookies.get('userInfo')
     const user: WebAppUser = userString ? JSON.parse(userString) : {}
-    if (user) {
+    if (!!user) {
       const response = await axios.post<IImageRequest, AxiosResponse<string>>(
         `${VITE_REACT_APP_HOST_URL}/image`,
         {
@@ -22,6 +22,7 @@ export class UserService {
           },
         }
       )
+      console.log(response)
       return response.data
     }
     return {}

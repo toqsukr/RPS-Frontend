@@ -7,8 +7,7 @@ import { IImage } from '@components/imageBox/ImageBox.interface'
 
 export const Header: FC<IImage> = ({ ...props }) => {
   async function handleDownload() {
-    const response = await UserService.sendImage(props)
-    console.log(response)
+    await UserService.sendImage(props)
   }
 
   return (
