@@ -15,7 +15,7 @@ const Home: FC = () => {
   return (
     <>
       <section id={css.home_main_section}>
-        <Header title={currentImage.title} src={currentImage.src} />
+        <Header {...currentImage} />
         <section id={css.home_inner_container}>
           <ImageBox currentImageID={imageID} images={images} setCurrentImageID={setImageID} />
         </section>

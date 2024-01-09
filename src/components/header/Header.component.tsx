@@ -3,10 +3,11 @@ import { BsCollection } from 'react-icons/bs'
 import css from './Header.module.scss'
 import DownloadIcon from '@components/ui/icons/download/DownloadIcon.component'
 import { UserService } from '@services/user/user.service'
+import { IImage } from '@components/imageBox/ImageBox.interface'
 
-export const Header: FC<{ title: string; src: string }> = ({ title, src }) => {
+export const Header: FC<IImage> = ({ ...props }) => {
   async function handleDownload() {
-    const response = await UserService.sendImage(src)
+    const response = await UserService.sendImage(props)
     console.log(response)
   }
 
@@ -14,7 +15,7 @@ export const Header: FC<{ title: string; src: string }> = ({ title, src }) => {
     <header>
       <div id={css.home_header_container}>
         <BsCollection />
-        <p>{title}</p>
+        <p>{props.title}</p>
         <DownloadIcon onClick={handleDownload} />
       </div>
     </header>
