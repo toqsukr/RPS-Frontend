@@ -7,6 +7,6 @@ export const useTelegram = () => {
   useEffect(() => {
     initDataUnsafe &&
       'user' in initDataUnsafe &&
-      Cookies.set('user', JSON.stringify(initDataUnsafe.user))
+      Cookies.set('userInfo', JSON.stringify(initDataUnsafe.user))
   }, [])
 }
