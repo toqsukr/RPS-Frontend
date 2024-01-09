@@ -8,7 +8,7 @@ import { VITE_REACT_APP_HOST_URL } from '@util/constants'
 export class UserService {
   static sendImage = async (image: IImage) => {
     const userString = Cookies.get('userInfo')
-    const user: WebAppUser = userString ? JSON.parse(userString) : {}
+    const user: WebAppUser | null = userString ? JSON.parse(userString) : null
     if (!!user) {
       const response = await axios.post<IImageRequest, AxiosResponse<string>>(
         `${VITE_REACT_APP_HOST_URL}/image`,
