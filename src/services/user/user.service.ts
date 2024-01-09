@@ -10,7 +10,7 @@ export class UserService {
     const user: WebAppUser = userString ? JSON.parse(userString) : {}
     if (user) {
       const response = await axios.post<IImageRequest, AxiosResponse<string>>(
-        `${import.meta.env.REACT_APP_HOST_URL}/image`,
+        `${import.meta.env.VITE_REACT_APP_HOST_URL}/image`,
         {
           userID: user.username,
           imageData: image,
