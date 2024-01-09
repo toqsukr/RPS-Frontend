@@ -13,7 +13,7 @@ export class UserService {
       const response = await axios.post<IImageRequest, AxiosResponse<string>>(
         `${VITE_REACT_APP_HOST_URL}/image`,
         {
-          userID: user.username,
+          userID: user.id,
           imageData: image,
         },
         {
