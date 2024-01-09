@@ -10,7 +10,6 @@ const Home: FC = () => {
   const { imageID, setImageID } = useImage()
 
   useTelegram()
-  console.log(import.meta.env.VITE_REACT_APP_HOST_URL)
 
   const currentImage = images[imageID]
   return (
