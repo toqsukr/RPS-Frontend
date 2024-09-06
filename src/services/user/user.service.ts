@@ -1,12 +1,12 @@
+import { IImage } from '@components/imageBox/ImageBox.interface'
+import { VITE_REACT_APP_HOST_URL } from '@util/constants'
 import { WebAppUser } from '@vkruglikov/react-telegram-web-app'
 import axios, { AxiosResponse } from 'axios'
 import Cookies from 'js-cookie'
 import { IImageRequest } from './user.interface'
-import { IImage } from '@components/imageBox/ImageBox.interface'
-import { VITE_REACT_APP_HOST_URL } from '@util/constants'
 
 export class UserService {
-  static sendImage = async (image: IImage) => {
+  static sendImage = async ({ downloadSRC, ...image }: IImage) => {
     const userString = Cookies.get('userInfo')
     const user: WebAppUser | null = userString ? JSON.parse(userString) : null
     if (!!user) {
@@ -14,7 +14,7 @@ export class UserService {
         `${VITE_REACT_APP_HOST_URL}/image`,
         {
           userID: user.id,
-          imageData: image,
+          imageData: { ...image, src: downloadSRC },
         },
         {
           headers: {
