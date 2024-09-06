@@ -4,3 +4,8 @@ export const enum Routes {
 }
 
 export const VITE_REACT_APP_HOST_URL = 'https://rps-telegram.onrender.com/api'
+
+export enum StorageKeys {
+  LIKES = 'rps-likes',
+  STARS = 'rps-stars',
+}

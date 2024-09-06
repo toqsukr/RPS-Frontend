@@ -1,7 +1,10 @@
 import HeartIcon from '@components/ui/icons/heart/HeartIcon.component'
 import StarIcon from '@components/ui/icons/star/StarIcon.component'
 import { useSwipeAnimation } from '@hooks/useSwipeAnimation.hook'
+import { likeAtom, toggleLikeAtom } from '@store/likes'
+import { starAtom, toggleStarAtom } from '@store/stars'
 import classNames from 'classnames'
+import { useAtom, useAtomValue } from 'jotai'
 import { FC, useState } from 'react'
 import { HiOutlineInformationCircle } from 'react-icons/hi'
 import { IoClose } from 'react-icons/io5'
@@ -18,6 +21,11 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
   const { startPosition, setCurrentPosition, setStartPosition } = useSwipeAnimation(
     css.home_card_container
   )
+  const likes = useAtomValue(likeAtom)
+  const [, toggleLike] = useAtom(toggleLikeAtom)
+
+  const stars = useAtomValue(starAtom)
+  const [, toggleStar] = useAtom(toggleStarAtom)
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
@@ -85,8 +93,15 @@ const ImageBox: FC<IImageBox> = ({ ...props }) => {
             id={css.info_icon}
             onClick={() => startPosition || setShowInfo(true)}
           />
-          <HeartIcon active={false} id={css.heart_icon} />
-          <StarIcon active={false} />
+          <HeartIcon
+            id={css.heart_icon}
+            active={!!likes.find(like => +like === currentImageID)}
+            onClick={() => toggleLike(currentImageID + '')}
+          />
+          <StarIcon
+            active={!!stars.find(star => +star === currentImageID)}
+            onClick={() => toggleStar(currentImageID + '')}
+          />
           <AuthorBar {...images[currentImageID].author} />
         </div>
         <div

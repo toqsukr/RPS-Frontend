@@ -1,21 +1,21 @@
-.heart_icon_filled {
-  fill: rgba(255, 40, 40, 0.75); /* Цвет обводки */
+.heart_shadow {
+  stroke: #ccc;
+  stroke-width: 3;
+  fill: none;
 }
 
-@keyframes fillAnimation {
-  0% {
-    stroke-dashoffset: 0; /* Длина линии (2 * длина линии) */
-  }
-  100% {
-    stroke-dashoffset: 500; /* Скрыть линию */
-  }
+.heart_fill {
+  stroke: rgba(255, 40, 40);
+  fill: none;
+  stroke-width: 3;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+  stroke-dasharray: 100;
 }
 
-@keyframes unfillAnimation {
-  0% {
-    stroke-dashoffset: 500; /* Скрыть линию */
-  }
-  100% {
-    stroke-dashoffset: 0; /* Длина линии (2 * длина линии) */
-  }
+.active {
+  stroke-dashoffset: 0;
+}
+
+.inactive {
+  stroke-dashoffset: 100;
 }

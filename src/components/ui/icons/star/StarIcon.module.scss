@@ -1,3 +1,21 @@
-.stared {
-  fill: rgba(255, 223, 40, 0.75);
+.star_shadow {
+  stroke: #ccc;
+  stroke-width: 2;
+  fill: none;
+}
+
+.star_fill {
+  stroke: gold;
+  fill: none;
+  stroke-width: 2;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+  stroke-dasharray: 100;
+}
+
+.active {
+  stroke-dashoffset: 0;
+}
+
+.inactive {
+  stroke-dashoffset: 100;
 }
