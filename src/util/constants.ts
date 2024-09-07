@@ -1,5 +1,6 @@
 export const enum Routes {
   DEFAULT_ROUTE = '/',
+  COLLECTION = '/collection',
   PAGE_404_ROUTE = '/404',
 }
 
